@@ -64,7 +64,7 @@ python main.py --config config.yaml --mode [cv|train|predict]
 The pipeline requires a config.yaml file to specify input data paths, training parameters, and output directories.
 
 Below is a sample structure of config.yaml:
-
+```
 data:
   temperature_train: "path/to/temperature_train.nc"
   rain_train: "path/to/rain_train.nc"
@@ -102,6 +102,7 @@ output:
   model_dir: "./out"
   predict_dir: "./out"
   plots_dir: "./plots"
+```
 ### Notes
 - You can try different values of `learning_rate` and `weight_decay` in cv mode.
 
@@ -116,7 +117,7 @@ output:
   - `'logsigmoid'`
   - `'leakyrelu'`
   - `'gelu'`
-- The model only considers Rainfall and Maximum temperature data 
+- The model only considers Rainfall and Maximum temperature data and not the Dams activity, which largely effects most large basins, so be careful to include months which exhibit high rainfall in the region like monsoon time. During high rainfall period the effect of Dams are often negligible.
 
 ## Input Data Requirements
 
