@@ -20,6 +20,7 @@ Each stage uses separate scripts modularized and orchestrated via `main.py`.
 - [Input Data Requirements](#input-data-requirements)
 - [Outputs](#outputs)
 - [Logging and Error Handling](#logging-and-error-handling)
+- [Sample Results](#sample-results)
 - [Data Sources](#data-sources)
 
 ---
@@ -198,6 +199,21 @@ General notes
 ## Data Sources
 
 This project uses rainfall, temperature, and discharge datasets for testing and demonstration. Due to licensing or distribution restrictions, the actual data files are **not included** in the repository.
+
+## Sample Results
+<h2 id="sample-results">📊 Sample Results</h2>
+
+<p align="center">
+  <img src="train_test_loss.png" alt="MSE Loss curve" width="600"/>
+</p>
+
+<p align="center"><em>Figure 1: MSE loss curve for the training period.</em></p>
+
+<p align="center">
+  <img src="train_test_plot.png" alt="Predicted vs Actual Rainfall (Region B)" width="600"/>
+</p>
+
+<p align="center"><em>Figure 2: Predicted vs Actual Discharge for training and testing periods.</em></p>
 
 ### Referenced Datasets
 
