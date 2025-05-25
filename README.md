@@ -34,8 +34,8 @@ This pipeline preprocesses rain and maximum temperature data, trains ANN models 
 
 1. Clone the repository:
     ```bash
-    git clone https://your.repo.url/here.git
-    cd your_repo_name
+    git clone https://github.com/sayan-geoDL/large-basin-ann-rain-response-pipeline
+    cd large-basin-ann-rain-response-pipeline
     ```
 
 2. (Optional) Create and activate a virtual environment:
