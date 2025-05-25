@@ -196,9 +196,6 @@ General notes
 
 - Logs are saved to ./main.log , making it easy to review pipeline execution details.
 
-## Data Sources
-
-This project uses rainfall, temperature, and discharge datasets for testing and demonstration. Due to licensing or distribution restrictions, the actual data files are **not included** in the repository.
 
 ## Sample Results
 <h2 id="sample-results">📊 Sample Results</h2>
@@ -214,6 +211,10 @@ This project uses rainfall, temperature, and discharge datasets for testing and 
 </p>
 
 <p align="center"><em>Figure 2: Predicted vs Actual Discharge for training and testing periods.</em></p>
+
+## Data Sources
+
+This project uses rainfall, temperature, and discharge datasets for testing and demonstration. Due to licensing or distribution restrictions, the actual data files are **not included** in the repository.
 
 ### Referenced Datasets
 
