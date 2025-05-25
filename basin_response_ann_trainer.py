@@ -217,7 +217,7 @@ def trainer(x_tr,y_tr,x_tst,y_tst,epochs,lr,neuron_n,stats,
     ax2.set_ylabel("Discharge ($m^3s^{-1}$)", color="black",fontsize=20)
     ax2.tick_params(axis='x', which='major', length=10, width=1.5)
     ax2.tick_params(axis='x', which='minor', length=5, width=1)
-    ax2.legend(loc='best',prop={'size':15})
+    ax2.legend(loc='best',prop={'size':10})
     plt.show()
     fig2.savefig(f"{plot_folder}/train_test_plot.png", bbox_inches='tight')
     perf_rows = pd.DataFrame({
