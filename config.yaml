@@ -1,0 +1,38 @@
+data:
+  temperature_train: "./data/temp_train.nc"
+  rain_train: "./data/rain_train.nc"
+  shape_file: "./data/shape.shp"
+  discharge_train: "./data/discharge.nc"
+  temperature_predict: "./data/temp_train.nc"
+  rain_predict: "./data/rain_train.nc"
+
+cross_validation:
+  train_time: ['1951','2008']
+  months: [6,10]
+  activation_function: 'logsigmoid'
+  neuron_list: [1,2,4,5,6,8,12,32]
+  epochs: 300
+  learning_rate: 0.01
+  weight_decay: 0.001
+  save_fig: False
+full_train:
+  activation_function: 'logsigmoid'
+  hidden_neuron: 6
+  epochs: 300
+  learning_rate: 0.01
+  weight_decay: 0.001
+  train_time: ['1951','2008']
+  test_time: ['2009','2023']
+  months: [6,10]
+  
+prediction :
+  predict_time: ['20009','2023']
+output:
+  out_dir: ./out
+  cv_results_dir: "./out"
+  train_dir: "./out"
+  stat_dir: "./out"
+  model_dir: "./out"
+  predict_dir: "./out"
+  plots_dir: "./plots"
+  

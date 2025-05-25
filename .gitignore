@@ -1,0 +1,11 @@
+# Ignore data, output, and plots
+data/
+out/
+plots/
+
+# Ignore temporary or backup files
+*.pyc
+__pycache__/
+*.swp
+.DS_Store
+

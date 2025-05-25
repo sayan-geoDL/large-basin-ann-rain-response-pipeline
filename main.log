@@ -1,0 +1,166 @@
+2025-05-24 17:37:54,547 - INFO - Running full training...
+2025-05-24 17:37:55,138 - INFO - freq_rain=1.0, freq_temperature=1.0, freq_discharge=30.43728813559322
+2025-05-24 17:37:55,138 - INFO - Precipitation field resampled to monthly
+2025-05-24 17:37:55,236 - INFO - Temperature field resampled to monthly
+2025-05-24 17:37:55,798 - INFO - Epoch [20/300], Loss: 0.432947
+2025-05-24 17:37:55,803 - INFO - Epoch [40/300], Loss: 0.319819
+2025-05-24 17:37:55,808 - INFO - Epoch [60/300], Loss: 0.270090
+2025-05-24 17:37:55,814 - INFO - Epoch [80/300], Loss: 0.248895
+2025-05-24 17:37:55,820 - INFO - Epoch [100/300], Loss: 0.239159
+2025-05-24 17:37:55,825 - INFO - Epoch [120/300], Loss: 0.235758
+2025-05-24 17:37:55,831 - INFO - Epoch [140/300], Loss: 0.234313
+2025-05-24 17:37:55,836 - INFO - Epoch [160/300], Loss: 0.233376
+2025-05-24 17:37:55,842 - INFO - Epoch [180/300], Loss: 0.232660
+2025-05-24 17:37:55,847 - INFO - Epoch [200/300], Loss: 0.232102
+2025-05-24 17:37:55,852 - INFO - Epoch [220/300], Loss: 0.231664
+2025-05-24 17:37:55,858 - INFO - Epoch [240/300], Loss: 0.231321
+2025-05-24 17:37:55,863 - INFO - Epoch [260/300], Loss: 0.231051
+2025-05-24 17:37:55,869 - INFO - Epoch [280/300], Loss: 0.230840
+2025-05-24 17:37:55,874 - INFO - Epoch [300/300], Loss: 0.230672
+2025-05-24 17:37:55,932 - INFO - nse= 0.7693352630381615
+2025-05-24 17:37:55,933 - INFO - rmse= 2645.9116987156694
+2025-05-24 17:43:30,387 - INFO - Running prediction...
+2025-05-24 17:43:30,978 - INFO - freq_rain=1.0, freq_temperature=1.0
+2025-05-24 17:43:30,978 - INFO - Precipitation field resampled to monthly
+2025-05-24 17:43:31,072 - INFO - Temperature field resampled to monthly
+2025-05-24 17:44:23,230 - INFO - Running prediction...
+2025-05-24 17:44:23,818 - INFO - freq_rain=1.0, freq_temperature=1.0
+2025-05-24 17:44:23,818 - INFO - Precipitation field resampled to monthly
+2025-05-24 17:44:23,913 - INFO - Temperature field resampled to monthly
+2025-05-24 17:44:23,978 - ERROR - Uncaught exception occurred
+Traceback (most recent call last):
+  File "period.pyx", line 1169, in pandas._libs.tslibs.period.period_ordinal_to_dt64
+OverflowError: Overflow occurred in npy_datetimestruct_to_datetime
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sayan/repos/river_basin_ann_predict/main.py", line 101, in <module>
+    run_prediction(config)
+  File "/home/sayan/repos/river_basin_ann_predict/main.py", line 81, in run_prediction
+    x_pr, time_ind = preprocess_pred(ds_x, ds_z, shp, pred_time, months,out_folder=out_folder
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/repos/river_basin_ann_predict/basin_response_ann_predict.py", line 92, in preprocess_data
+    tsx1_pr = tsx1.sel(time=slice(tm_pr[0], tm_pr[1]))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/xarray/core/dataarray.py", line 1690, in sel
+    ds = self._to_temp_dataset().sel(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/xarray/core/dataset.py", line 2890, in sel
+    query_results = map_index_queries(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/xarray/core/indexing.py", line 196, in map_index_queries
+    results.append(index.sel(labels, **options))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/xarray/core/indexes.py", line 761, in sel
+    indexer = _query_slice(self.index, label, coord_name, method, tolerance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/xarray/core/indexes.py", line 500, in _query_slice
+    indexer = index.slice_indexer(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/datetimes.py", line 682, in slice_indexer
+    return Index.slice_indexer(self, start, end, step)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6662, in slice_indexer
+    start_slice, end_slice = self.slice_locs(start, end, step=step)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6885, in slice_locs
+    end_slice = self.get_slice_bound(end, "right")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6794, in get_slice_bound
+    label = self._maybe_cast_slice_bound(label, side)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/datetimes.py", line 642, in _maybe_cast_slice_bound
+    label = super()._maybe_cast_slice_bound(label, side)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/datetimelike.py", line 375, in _maybe_cast_slice_bound
+    lower, upper = self._parsed_string_to_bounds(reso, parsed)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/datetimes.py", line 538, in _parsed_string_to_bounds
+    start, end = per.start_time, per.end_time
+                 ^^^^^^^^^^^^^^
+  File "period.pyx", line 1666, in pandas._libs.tslibs.period.PeriodMixin.start_time.__get__
+  File "period.pyx", line 1992, in pandas._libs.tslibs.period._Period.to_timestamp
+  File "period.pyx", line 1172, in pandas._libs.tslibs.period.period_ordinal_to_dt64
+pandas._libs.tslibs.np_datetime.OutOfBoundsDatetime: Out of bounds nanosecond timestamp: 3000-01-01 00:00:00
+2025-05-24 17:45:16,017 - INFO - Running prediction...
+2025-05-24 17:45:16,610 - INFO - freq_rain=1.0, freq_temperature=1.0
+2025-05-24 17:45:16,610 - INFO - Precipitation field resampled to monthly
+2025-05-24 17:45:16,702 - INFO - Temperature field resampled to monthly
+2025-05-24 17:45:16,766 - ERROR - Uncaught exception occurred
+Traceback (most recent call last):
+  File "period.pyx", line 1169, in pandas._libs.tslibs.period.period_ordinal_to_dt64
+OverflowError: Overflow occurred in npy_datetimestruct_to_datetime
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sayan/repos/river_basin_ann_predict/main.py", line 102, in <module>
+    run_prediction(config)
+  File "/home/sayan/repos/river_basin_ann_predict/main.py", line 82, in run_prediction
+    x_pr, time_ind = preprocess_pred(ds_x, ds_z, shp, pred_time, months,out_folder=out_folder
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/repos/river_basin_ann_predict/basin_response_ann_predict.py", line 92, in preprocess_data
+    tsx1_pr = tsx1.sel(time=slice(tm_pr[0], tm_pr[1]))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/xarray/core/dataarray.py", line 1690, in sel
+    ds = self._to_temp_dataset().sel(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/xarray/core/dataset.py", line 2890, in sel
+    query_results = map_index_queries(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/xarray/core/indexing.py", line 196, in map_index_queries
+    results.append(index.sel(labels, **options))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/xarray/core/indexes.py", line 761, in sel
+    indexer = _query_slice(self.index, label, coord_name, method, tolerance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/xarray/core/indexes.py", line 500, in _query_slice
+    indexer = index.slice_indexer(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/datetimes.py", line 682, in slice_indexer
+    return Index.slice_indexer(self, start, end, step)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6662, in slice_indexer
+    start_slice, end_slice = self.slice_locs(start, end, step=step)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6885, in slice_locs
+    end_slice = self.get_slice_bound(end, "right")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6794, in get_slice_bound
+    label = self._maybe_cast_slice_bound(label, side)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/datetimes.py", line 642, in _maybe_cast_slice_bound
+    label = super()._maybe_cast_slice_bound(label, side)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/datetimelike.py", line 375, in _maybe_cast_slice_bound
+    lower, upper = self._parsed_string_to_bounds(reso, parsed)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sayan/anaconda3/lib/python3.12/site-packages/pandas/core/indexes/datetimes.py", line 538, in _parsed_string_to_bounds
+    start, end = per.start_time, per.end_time
+                 ^^^^^^^^^^^^^^
+  File "period.pyx", line 1666, in pandas._libs.tslibs.period.PeriodMixin.start_time.__get__
+  File "period.pyx", line 1992, in pandas._libs.tslibs.period._Period.to_timestamp
+  File "period.pyx", line 1172, in pandas._libs.tslibs.period.period_ordinal_to_dt64
+pandas._libs.tslibs.np_datetime.OutOfBoundsDatetime: Out of bounds nanosecond timestamp: 3000-01-01 00:00:00
+2025-05-24 19:10:02,526 - INFO - Running full training...
+2025-05-24 19:10:03,123 - INFO - freq_rain=1.0, freq_temperature=1.0, freq_discharge=30.43728813559322
+2025-05-24 19:10:03,123 - INFO - Precipitation field resampled to monthly
+2025-05-24 19:10:03,217 - INFO - Temperature field resampled to monthly
+2025-05-24 19:10:03,786 - INFO - Epoch [20/300], Loss: 0.382511
+2025-05-24 19:10:03,792 - INFO - Epoch [40/300], Loss: 0.301343
+2025-05-24 19:10:03,801 - INFO - Epoch [60/300], Loss: 0.264161
+2025-05-24 19:10:03,813 - INFO - Epoch [80/300], Loss: 0.248104
+2025-05-24 19:10:03,818 - INFO - Epoch [100/300], Loss: 0.240655
+2025-05-24 19:10:03,829 - INFO - Epoch [120/300], Loss: 0.236794
+2025-05-24 19:10:03,842 - INFO - Epoch [140/300], Loss: 0.234539
+2025-05-24 19:10:03,849 - INFO - Epoch [160/300], Loss: 0.233136
+2025-05-24 19:10:03,854 - INFO - Epoch [180/300], Loss: 0.232252
+2025-05-24 19:10:03,865 - INFO - Epoch [200/300], Loss: 0.231683
+2025-05-24 19:10:03,877 - INFO - Epoch [220/300], Loss: 0.231308
+2025-05-24 19:10:03,882 - INFO - Epoch [240/300], Loss: 0.231051
+2025-05-24 19:10:03,888 - INFO - Epoch [260/300], Loss: 0.230866
+2025-05-24 19:10:03,894 - INFO - Epoch [280/300], Loss: 0.230727
+2025-05-24 19:10:03,899 - INFO - Epoch [300/300], Loss: 0.230616
+2025-05-24 19:10:03,969 - INFO - nse= 0.7693887368215252
+2025-05-24 19:10:03,969 - INFO - rmse= 2645.604987096393
