@@ -108,7 +108,7 @@ output:
 
 - Modify `neuron_list` to experiment with different neuron counts.
 
-- If `weight_decay` is set to None, L2 regularization is disabled. The same applies to learning_rate.
+- If `weight_decay` is set to None, L2 regularization is disabled.
 
 - The `activation_function` supports only a limited set of predefined function
   - `'relu'`
