@@ -14,6 +14,7 @@ Each stage uses separate scripts modularized and orchestrated via `main.py`.
 ## Table of Contents
 
 - [Overview](#overview)
+- [Skills Demonstarted](#skills-demonstarted)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
@@ -29,6 +30,25 @@ Each stage uses separate scripts modularized and orchestrated via `main.py`.
 
 This pipeline preprocesses rain and maximum temperature data, trains ANN models for river basin discharge response at the mouth of the basin, and produces the basin wide response to rain. The pipeline supports configurable cross-validation, full training, and prediction modes. This model only works for large basins where the monthly discharge response depends on the present month rain and the prior month rain.
 
+<p align="center">
+  <img src="pipeline_flowchart-1.png" alt="Pipeline Flowchart" height="700"/>
+</p>
+
+<p align="center"><em>Figure 1: Schematic representation of the pipeline (Dashed arrows represent logical path for the activation of each mode).</em></p>
+
+---
+## Skills Demonstrated
+
+- Time-series data preprocessing (NetCDF and shapefiles)
+- Artificial Neural Network (ANN) modeling for hydrological prediction
+- Cross-validation and hyperparameter tuning
+- Model training and evaluation using statistical metrics (RMSE, NSE)
+- Z-score normalization and scaling management
+- Modular Python development with structured config-based execution
+- Logging, error handling, and reproducible results
+- Result visualization and automated plotting (Matplotlib/Seaborn)
+- Use of domain knowledge to design ANN input features (e.g., using present and prior rainfall)
+- Integration of geospatial data (basin shapefiles) with machine learning workflows
 ---
 
 ## Installation
@@ -205,13 +225,13 @@ General notes
   <img src="train_test_loss.png" alt="MSE Loss curve" width="600"/>
 </p>
 
-<p align="center"><em>Figure 1: MSE loss curve for the training period.</em></p>
+<p align="center"><em>Figure 2: MSE loss curve for the training period.</em></p>
 
 <p align="center">
   <img src="train_test_plot.png" alt="Predicted vs Actual Rainfall (Region B)" width="600"/>
 </p>
 
-<p align="center"><em>Figure 2: Predicted vs Actual Discharge for training and testing periods.</em></p>
+<p align="center"><em>Figure 3: Predicted vs Actual Discharge for training and testing periods.</em></p>
 
 ## Data Sources
 
